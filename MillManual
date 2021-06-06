@@ -1,0 +1,34 @@
+
+Mill.MouseButton1Click:Connect(function()
+	G.somethinghere = true
+	if _G.somethinghere == true then
+	local Island
+	for i,v in pairs(game:GetService("Workspace").Islands:GetChildren()) do
+		if v.UserId.Value == game.Players.LocalPlayer.UserId then
+			Island = v
+local args = {
+	[1] = {
+		["amount"] = 1,
+		["block"] = v.Blocks.steelMill,
+		["player_tracking_category"] = "join_from_web",
+		["toolName"] = "iron"
+	}
+}
+
+			game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_BLOCK_WORKER_DEPOSIT_TOOL_REQUEST:InvokeServer(unpack(args))
+			wait()
+			for i = 3, 5 do
+			local args = {
+				[1] = {
+					["amount"] = 1,
+					["block"] = workspace.Islands:FindFirstChild("1997607549-island").Blocks.steelMill,
+					["player_tracking_category"] = "join_from_web",
+					["toolName"] = "coal"
+				}
+			}
+
+			game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_BLOCK_WORKER_DEPOSIT_TOOL_REQUEST:InvokeServer(unpack(args))
+end
+end
+end
+end)
