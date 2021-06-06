@@ -1,6 +1,6 @@
 
 Mill.MouseButton1Click:Connect(function()
-	G.somethinghere = true
+	_G.somethinghere = true
 	if _G.somethinghere == true then
 	local Island
 	for i,v in pairs(game:GetService("Workspace").Islands:GetChildren()) do
