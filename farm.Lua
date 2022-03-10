@@ -54,18 +54,22 @@ local function placeSeed(Seed)
 end
 
 local function fastHarvest(Seed)
-    for _,y in pairs(Blocks:GetChildren()) do
-        if y.Name == Seed then
+    for i, v in pairs(Blocks:GetChildren()) do
+        if v.Name == Seed then
+            for _, Seeds in pairs(v:GetChildren()) do
+                if Seeds.Name == "stage-3" then
     local args = {
         [1] = {
             ["player"] = player,
             ["player_tracking_category"] = "join_from_web",
-            ["model"] = y
+            ["model"] = v
         }
     }
     game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_HARVEST_CROP_REQUEST:InvokeServer(
         unpack(args)
     )
+end
+end
     end
   end
 end
@@ -125,7 +129,7 @@ local function HarvestAndPlant(Seed)
                 if Seeds.Name == "stage-3" then
                     Seed = v
                     if getgenv().StartFarm == true then
-                        print("Found", Seed)
+                        print("Auto farm", Seed, "is on")
                         human.CFrame = Seed.CFrame
                         print("Teleporting to", Seed)
                         fastHarvest(Seed)
