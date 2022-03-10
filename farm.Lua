@@ -85,7 +85,7 @@ local args = {
     }
 }
 game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_TOOL_PICKUP_REQUEST:InvokeServer(unpack(args))
-if _G.SellCrates == true then
+if_getgenv.SellCrates == true then
 local args = {
     [1] = {
         ["merchant"] = "wholesaler",
@@ -112,7 +112,7 @@ local function HarvestAndPlant(Seed)
         for _,Seeds in pairs(v:GetChildren()) do
             if Seeds.Name == "stage-3" then
                 Seed = v
-                if _G.StartFarm == true then
+                if _getgenv.StartFarm == true then
     print("Found", Seed)
     print("Teleporting to", Seed)
     fastHarvest(Seed)
@@ -132,8 +132,8 @@ end
 end
 end
 
-_G.StartFarm = false
-while _G.StartFarm == true do
+_getgenv.StartFarm = false
+while _getgenv.StartFarm == true do
     task.wait()
-HarvestAndPlant(tostring(_G.Farmable))
+HarvestAndPlant(tostring(_getgenv.Farmable))
 end
