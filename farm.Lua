@@ -40,7 +40,6 @@ local function harvestSeed(Seed)
 end
 
 local function placeSeed(Seed)
-    human.CFrame = Seed.CFrame + Vector3.new(0, 15, 0)
     local args = {
         [1] = {
             ["upperBlock"] = false,
@@ -64,7 +63,6 @@ local function fastHarvest(Seed)
             ["model"] = Seed
         }
     }
-
     game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_HARVEST_CROP_REQUEST:InvokeServer(
         unpack(args)
     )
