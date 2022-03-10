@@ -135,5 +135,5 @@ end
 getgenv().StartFarm = false
 while getgenv().StartFarm == true do
     task.wait()
-HarvestAndPlant(tostring(_getgenv.Farmable))
+HarvestAndPlant(tostring(getgenv().Farmable))
 end
