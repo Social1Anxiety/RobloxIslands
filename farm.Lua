@@ -128,7 +128,7 @@ local function HarvestAndPlant(Seed)
                     Seed = v
                     if getgenv().StartFarm == true then
                         print("Found", Seed)
-                        human.CFrame = Seed.CFrame + Vector3.new(0, 15, 0)
+                        human.CFrame = Seed.CFrame
                         print("Teleporting to", Seed)
                         fastHarvest(Seed)
                         print("Harvesting", Seed)
@@ -137,7 +137,7 @@ local function HarvestAndPlant(Seed)
                         waterSeed(Seed)
                         print("Watering", Seed)
                         cratePacker2(Seed)
-                        print("Depositing", tostring(Seed) .. " into cratePacker2")
+                        print("Depositing", tostring(Seed) .. " into CratePacker2")
                         harvestedTotal.Value = harvestedTotal.Value + 1
                         rconsoleprint("\r" .. tostring(Seed) .. "'s Harvested This Session: " .. harvestedTotal.Value)
                     end
