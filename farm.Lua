@@ -16,7 +16,6 @@ print("Found UserID:", player.UserId, "in", island.Owners:FindFirstChild(tostrin
 local Blocks = island.Blocks
 
 local function waterSeed(Seed)
-    human.CFrame = Seed.CFrame + Vector3.new(0, 15, 0)
     local args = {
         [1] = {
             ["block"] = Seed
@@ -28,7 +27,6 @@ local function waterSeed(Seed)
 end
 
 local function harvestSeed(Seed)
-    human.CFrame = Seed.CFrame + Vector3.new(0, 15, 0)
     local args = {
         [1] = {
             ["player"] = player,
@@ -130,6 +128,7 @@ local function HarvestAndPlant(Seed)
                     Seed = v
                     if getgenv().StartFarm == true then
                         print("Found", Seed)
+                        human.CFrame = Seed.CFrame + Vector3.new(0, 15, 0)
                         print("Teleporting to", Seed)
                         fastHarvest(Seed)
                         print("Harvesting", Seed)
