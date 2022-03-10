@@ -132,8 +132,7 @@ end
 end
 end
 
-getgenv().StartFarm = false
 while getgenv().StartFarm == true do
-    task.wait()
-HarvestAndPlant(tostring(getgenv().Farmable))
+task.wait()
+HarvestAndPlant(getgenv().Farmable)
 end
