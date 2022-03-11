@@ -139,7 +139,7 @@ local function HarvestAndPlant(Seed)
                     if getgenv().StartFarm == true and Seed then
                         spawn(function()
                         print("Auto farm", Seed, "is on")
-                        human.CFrame = Seed.CFrame
+                        Teleport(Seed)
                         print("Teleporting to", Seed)
                         fastHarvest(Seed)
                         print("Harvesting", Seed)
