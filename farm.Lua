@@ -124,6 +124,12 @@ local function cratePacker2(Seed)
 end
 end
 
+local function Teleport(Seed)
+    if getgenv().toggleTeleport == true then
+   human.CFrame = Seed.CFrame
+        end
+end
+
 local function HarvestAndPlant(Seed)
     for i, v in pairs(Blocks:GetChildren()) do
         if v.Name == Seed then
