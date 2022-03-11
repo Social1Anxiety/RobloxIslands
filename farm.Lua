@@ -2,7 +2,6 @@ local player = game.Players.LocalPlayer
 local char = player.Character
 local human = char.HumanoidRootPart
 local island
-local vel = Instance.new("BodyVelocity") vel.MaxForce = Vector3.new(0,999999,0) vel.Velocity = Vector3.new(0,0,0)
 
 local harvestedTotal = Instance.new("NumberValue")
 
@@ -123,9 +122,6 @@ local function HarvestAndPlant(Seed)
                     Seed = v
                     if getgenv().StartFarm == true and Seed then
                         spawn(function()
-                            if getgenv().smoothTeleport == true then
-                        vel.Parent = human else
-                            vel:Destroy()
                         print("Auto farm", Seed, "is on")
                         human.CFrame = Seed.CFrame
                         print("Teleporting to", Seed)
@@ -139,10 +135,7 @@ local function HarvestAndPlant(Seed)
                         print("Depositing", tostring(Seed) .. " into CratePacker2")
                         harvestedTotal.Value = harvestedTotal.Value + 1
                         rconsoleprint("\r" .. tostring(Seed) .. "'s Harvested This Session: " .. harvestedTotal.Value)
-                        end
                         end)
-                        else
-                        vel:Destroy()
                     end
                 end
             end
