@@ -16,6 +16,7 @@ print("Found UserID:", player.UserId, "in", island.Owners:FindFirstChild(tostrin
 local Blocks = island.Blocks
 
 local function waterSeed(Seed)
+    if getgenv().waterSeed == true then
     local args = {
         [1] = {
             ["block"] = Seed
@@ -24,9 +25,11 @@ local function waterSeed(Seed)
     game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_WATER_BLOCK:InvokeServer(
         unpack(args)
     )
+    end
 end
 
 local function harvestSeed(Seed)
+    if getgenv().harvestSeed == true then
     local args = {
         [1] = {
             ["player"] = player,
@@ -37,9 +40,11 @@ local function harvestSeed(Seed)
     game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_HARVEST_CROP_REQUEST:InvokeServer(
         unpack(args)
     )
+    end
 end
 
 local function placeSeed(Seed)
+    if getgenv().replaceSeed == true then
     local args = {
         [1] = {
             ["upperBlock"] = false,
@@ -51,9 +56,11 @@ local function placeSeed(Seed)
     game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_BLOCK_PLACE_REQUEST:InvokeServer(
         unpack(args)
     )
+    end
 end
 
 local function fastHarvest(Seed)
+    if getgenv().FastHarvest == true then
     local args = {
         [1] = {
             ["player"] = player,
@@ -64,9 +71,11 @@ local function fastHarvest(Seed)
     game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_HARVEST_CROP_REQUEST:InvokeServer(
         unpack(args)
     )
+    end
 end
 
 local function cratePacker2(Seed)
+    if getgenv().AutocCratePacker == true then
     for i, v in pairs(player.Backpack:GetChildren()) do
         if v.Name:find(tostring(Seed)) and not v.Name:find(tostring("Seeds")) then
             for count = 1, v.Amount.Value do
@@ -112,6 +121,7 @@ local function cratePacker2(Seed)
             end
         end
     end
+end
 end
 
 local function HarvestAndPlant(Seed)
