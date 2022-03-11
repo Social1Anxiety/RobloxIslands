@@ -58,7 +58,7 @@ local function fastHarvest(Seed)
         [1] = {
             ["player"] = player,
             ["player_tracking_category"] = "join_from_web",
-            ["model"] = v
+            ["model"] = Seed
         }
     }
     game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_HARVEST_CROP_REQUEST:InvokeServer(
