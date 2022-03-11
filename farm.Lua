@@ -123,6 +123,9 @@ local function HarvestAndPlant(Seed)
                     if getgenv().StartFarm == true and Seed then
                         spawn(function()    
                         print("Auto farm", Seed, "is on")
+                        if getgenv().smoothTeleport == true then
+                        human.Anchored = true else
+                        human.Anchored = false
                         human.CFrame = Seed.CFrame
                         print("Teleporting to", Seed)
                         fastHarvest(Seed)
@@ -135,7 +138,10 @@ local function HarvestAndPlant(Seed)
                         print("Depositing", tostring(Seed) .. " into CratePacker2")
                         harvestedTotal.Value = harvestedTotal.Value + 1
                         rconsoleprint("\r" .. tostring(Seed) .. "'s Harvested This Session: " .. harvestedTotal.Value)
+                        end
                         end)
+                        else
+                        human.Anchored = false
                     end
                 end
             end
