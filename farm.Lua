@@ -120,7 +120,8 @@ local function HarvestAndPlant(Seed)
             for _, Seeds in pairs(v:GetChildren()) do
                 if Seeds.Name == "stage-3" then
                     Seed = v
-                    if getgenv().StartFarm == true then
+                    if getgenv().StartFarm == true and Seed then
+                        spawn(function()    
                         print("Auto farm", Seed, "is on")
                         human.CFrame = Seed.CFrame
                         print("Teleporting to", Seed)
@@ -134,6 +135,7 @@ local function HarvestAndPlant(Seed)
                         print("Depositing", tostring(Seed) .. " into CratePacker2")
                         harvestedTotal.Value = harvestedTotal.Value + 1
                         rconsoleprint("\r" .. tostring(Seed) .. "'s Harvested This Session: " .. harvestedTotal.Value)
+                        end)
                     end
                 end
             end
@@ -142,6 +144,6 @@ local function HarvestAndPlant(Seed)
 end
 
 while getgenv().StartFarm == true do
-    task.wait()
+    task.wait(0.2)
     HarvestAndPlant(getgenv().Farmable)
 end
