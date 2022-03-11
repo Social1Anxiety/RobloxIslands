@@ -144,6 +144,6 @@ local function HarvestAndPlant(Seed)
 end
 
 while getgenv().StartFarm == true do
-    task.wait(0.2)
+    task.wait(getgenv().Speed)
     HarvestAndPlant(getgenv().Farmable)
 end
