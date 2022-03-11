@@ -75,7 +75,7 @@ local function fastHarvest(Seed)
 end
 
 local function cratePacker2(Seed)
-    if getgenv().AutocCratePacker == true then
+    if getgenv().AutoCratePacker == true then
     for i, v in pairs(player.Backpack:GetChildren()) do
         if v.Name:find(tostring(Seed)) and not v.Name:find(tostring("Seeds")) then
             for count = 1, v.Amount.Value do
