@@ -21,7 +21,7 @@ local Temp = Instance.new("Frame")
 local UIGridLayout_2 = Instance.new("UIGridLayout")
 local CurrentOwner = Instance.new("TextLabel")
 local UICorner_5 = Instance.new("UICorner")
-local Worth = Instance.new("TextLabel")
+local _5 = Instance.new("TextLabel")
 local UICorner_6 = Instance.new("UICorner")
 local SellingTime = Instance.new("TextLabel")
 local UICorner_7 = Instance.new("UICorner")
@@ -29,22 +29,21 @@ local ITEMID = Instance.new("TextLabel")
 local UICorner_8 = Instance.new("UICorner")
 local Level = Instance.new("TextLabel")
 local UICorner_9 = Instance.new("UICorner")
-local Mold = Instance.new("TextLabel")
+local _10 = Instance.new("TextLabel")
 local UICorner_10 = Instance.new("UICorner")
-local Enchant1 = Instance.new("TextLabel")
+local _11 = Instance.new("TextLabel")
 local UICorner_11 = Instance.new("UICorner")
-local Enchant3 = Instance.new("TextLabel")
+local _3 = Instance.new("TextLabel")
 local UICorner_12 = Instance.new("UICorner")
-local Enchant2 = Instance.new("TextLabel")
+local _6 = Instance.new("TextLabel")
 local UICorner_13 = Instance.new("UICorner")
-local Class = Instance.new("TextLabel")
+local _2 = Instance.new("TextLabel")
 local UICorner_14 = Instance.new("UICorner")
-local Rarity = Instance.new("TextLabel")
+local UISizeConstraint = Instance.new("UISizeConstraint")
+local _12 = Instance.new("TextLabel")
 local UICorner_15 = Instance.new("UICorner")
-local Quality = Instance.new("TextLabel")
 local UICorner_16 = Instance.new("UICorner")
 local UICorner_17 = Instance.new("UICorner")
-local UICorner_18 = Instance.new("UICorner")
 local Glow = Instance.new("ImageLabel")
 
 --Properties:
@@ -139,7 +138,7 @@ Temp.Size = UDim2.new(0.987452984, 0, 0.837499976, 0)
 
 UIGridLayout_2.Parent = Temp
 UIGridLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout_2.CellSize = UDim2.new(0, 125, 0, 30)
+UIGridLayout_2.CellSize = UDim2.new(0, 125, 0, 31)
 
 CurrentOwner.Name = "CurrentOwner"
 CurrentOwner.Parent = Temp
@@ -147,7 +146,7 @@ CurrentOwner.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 CurrentOwner.LayoutOrder = 1
 CurrentOwner.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
 CurrentOwner.Font = Enum.Font.Gotham
-CurrentOwner.Text = "Owner"
+CurrentOwner.Text = "Owner:"
 CurrentOwner.TextColor3 = Color3.fromRGB(255, 255, 255)
 CurrentOwner.TextScaled = true
 CurrentOwner.TextSize = 14.000
@@ -156,20 +155,20 @@ CurrentOwner.TextWrapped = true
 UICorner_5.CornerRadius = UDim.new(0, 4)
 UICorner_5.Parent = CurrentOwner
 
-Worth.Name = "Worth"
-Worth.Parent = Temp
-Worth.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Worth.LayoutOrder = 2
-Worth.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
-Worth.Font = Enum.Font.Gotham
-Worth.Text = "Worth"
-Worth.TextColor3 = Color3.fromRGB(255, 255, 255)
-Worth.TextScaled = true
-Worth.TextSize = 14.000
-Worth.TextWrapped = true
+_5.Name = "5"
+_5.Parent = Temp
+_5.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+_5.LayoutOrder = 2
+_5.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
+_5.Font = Enum.Font.Gotham
+_5.Text = "Worth:"
+_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+_5.TextScaled = true
+_5.TextSize = 14.000
+_5.TextWrapped = true
 
 UICorner_6.CornerRadius = UDim.new(0, 4)
-UICorner_6.Parent = Worth
+UICorner_6.Parent = _5
 
 SellingTime.Name = "SellingTime"
 SellingTime.Parent = Temp
@@ -177,7 +176,7 @@ SellingTime.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 SellingTime.LayoutOrder = 4
 SellingTime.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
 SellingTime.Font = Enum.Font.Gotham
-SellingTime.Text = "Selling time"
+SellingTime.Text = "Selling time:"
 SellingTime.TextColor3 = Color3.fromRGB(255, 255, 255)
 SellingTime.TextScaled = true
 SellingTime.TextSize = 14.000
@@ -192,7 +191,7 @@ ITEMID.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 ITEMID.LayoutOrder = 7
 ITEMID.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
 ITEMID.Font = Enum.Font.Gotham
-ITEMID.Text = "ITEMID"
+ITEMID.Text = "ITEMID:"
 ITEMID.TextColor3 = Color3.fromRGB(255, 255, 255)
 ITEMID.TextScaled = true
 ITEMID.TextSize = 14.000
@@ -207,7 +206,7 @@ Level.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 Level.LayoutOrder = 3
 Level.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
 Level.Font = Enum.Font.Gotham
-Level.Text = "Level"
+Level.Text = "Level:"
 Level.TextColor3 = Color3.fromRGB(255, 255, 255)
 Level.TextScaled = true
 Level.TextSize = 14.000
@@ -216,116 +215,106 @@ Level.TextWrapped = true
 UICorner_9.CornerRadius = UDim.new(0, 4)
 UICorner_9.Parent = Level
 
-Mold.Name = "Mold"
-Mold.Parent = Temp
-Mold.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Mold.LayoutOrder = 12
-Mold.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
-Mold.Font = Enum.Font.Gotham
-Mold.Text = "Mold"
-Mold.TextColor3 = Color3.fromRGB(255, 255, 255)
-Mold.TextScaled = true
-Mold.TextSize = 14.000
-Mold.TextWrapped = true
+_10.Name = "10"
+_10.Parent = Temp
+_10.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+_10.LayoutOrder = 8
+_10.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
+_10.Font = Enum.Font.Gotham
+_10.Text = "Enchant1:"
+_10.TextColor3 = Color3.fromRGB(255, 255, 255)
+_10.TextScaled = true
+_10.TextSize = 14.000
+_10.TextWrapped = true
 
 UICorner_10.CornerRadius = UDim.new(0, 4)
-UICorner_10.Parent = Mold
+UICorner_10.Parent = _10
 
-Enchant1.Name = "Enchant1"
-Enchant1.Parent = Temp
-Enchant1.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Enchant1.LayoutOrder = 8
-Enchant1.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
-Enchant1.Font = Enum.Font.Gotham
-Enchant1.Text = "Enchant1"
-Enchant1.TextColor3 = Color3.fromRGB(255, 255, 255)
-Enchant1.TextScaled = true
-Enchant1.TextSize = 14.000
-Enchant1.TextWrapped = true
+_11.Name = "11"
+_11.Parent = Temp
+_11.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+_11.LayoutOrder = 9
+_11.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
+_11.Font = Enum.Font.Gotham
+_11.Text = "Enchant2:"
+_11.TextColor3 = Color3.fromRGB(255, 255, 255)
+_11.TextScaled = true
+_11.TextSize = 14.000
+_11.TextWrapped = true
 
 UICorner_11.CornerRadius = UDim.new(0, 4)
-UICorner_11.Parent = Enchant1
+UICorner_11.Parent = _11
 
-Enchant3.Name = "Enchant3"
-Enchant3.Parent = Temp
-Enchant3.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Enchant3.LayoutOrder = 10
-Enchant3.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
-Enchant3.Font = Enum.Font.Gotham
-Enchant3.Text = "Enchant3"
-Enchant3.TextColor3 = Color3.fromRGB(255, 255, 255)
-Enchant3.TextScaled = true
-Enchant3.TextSize = 14.000
-Enchant3.TextWrapped = true
+_3.Name = "3"
+_3.Parent = Temp
+_3.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+_3.LayoutOrder = 11
+_3.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
+_3.Font = Enum.Font.Gotham
+_3.Text = "Class:"
+_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+_3.TextScaled = true
+_3.TextSize = 14.000
+_3.TextWrapped = true
 
 UICorner_12.CornerRadius = UDim.new(0, 4)
-UICorner_12.Parent = Enchant3
+UICorner_12.Parent = _3
 
-Enchant2.Name = "Enchant2"
-Enchant2.Parent = Temp
-Enchant2.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Enchant2.LayoutOrder = 9
-Enchant2.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
-Enchant2.Font = Enum.Font.Gotham
-Enchant2.Text = "Enchant2"
-Enchant2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Enchant2.TextScaled = true
-Enchant2.TextSize = 14.000
-Enchant2.TextWrapped = true
+_6.Name = "6"
+_6.Parent = Temp
+_6.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+_6.LayoutOrder = 34
+_6.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
+_6.Font = Enum.Font.Gotham
+_6.Text = "Mold:"
+_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+_6.TextScaled = true
+_6.TextSize = 14.000
+_6.TextWrapped = true
 
 UICorner_13.CornerRadius = UDim.new(0, 4)
-UICorner_13.Parent = Enchant2
+UICorner_13.Parent = _6
 
-Class.Name = "Class"
-Class.Parent = Temp
-Class.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Class.LayoutOrder = 11
-Class.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
-Class.Font = Enum.Font.Gotham
-Class.Text = "Class"
-Class.TextColor3 = Color3.fromRGB(255, 255, 255)
-Class.TextScaled = true
-Class.TextSize = 14.000
-Class.TextWrapped = true
+_2.Name = "2"
+_2.Parent = Temp
+_2.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+_2.LayoutOrder = 5
+_2.Size = UDim2.new(0.328968346, 0, 0.459242284, 0)
+_2.Font = Enum.Font.Gotham
+_2.Text = "Rarity: / Quality:"
+_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+_2.TextScaled = true
+_2.TextSize = 14.000
+_2.TextWrapped = true
 
 UICorner_14.CornerRadius = UDim.new(0, 4)
-UICorner_14.Parent = Class
+UICorner_14.Parent = _2
 
-Rarity.Name = "Rarity"
-Rarity.Parent = Temp
-Rarity.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Rarity.LayoutOrder = 6
-Rarity.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
-Rarity.Font = Enum.Font.Gotham
-Rarity.Text = "Rarity"
-Rarity.TextColor3 = Color3.fromRGB(255, 255, 255)
-Rarity.TextScaled = true
-Rarity.TextSize = 14.000
-Rarity.TextWrapped = true
+UISizeConstraint.Parent = _2
+UISizeConstraint.MaxSize = Vector2.new(500, 300)
+UISizeConstraint.MinSize = Vector2.new(255, 31)
+
+_12.Name = "12"
+_12.Parent = Temp
+_12.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+_12.BorderColor3 = Color3.fromRGB(27, 42, 53)
+_12.LayoutOrder = 10
+_12.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
+_12.Font = Enum.Font.Gotham
+_12.Text = "Enchant3:"
+_12.TextColor3 = Color3.fromRGB(255, 255, 255)
+_12.TextScaled = true
+_12.TextSize = 14.000
+_12.TextWrapped = true
 
 UICorner_15.CornerRadius = UDim.new(0, 4)
-UICorner_15.Parent = Rarity
+UICorner_15.Parent = _12
 
-Quality.Name = "Quality"
-Quality.Parent = Temp
-Quality.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Quality.LayoutOrder = 5
-Quality.Size = UDim2.new(0.161258996, 0, 0.459242284, 0)
-Quality.Font = Enum.Font.Gotham
-Quality.Text = "Quality"
-Quality.TextColor3 = Color3.fromRGB(255, 255, 255)
-Quality.TextScaled = true
-Quality.TextSize = 14.000
-Quality.TextWrapped = true
-
-UICorner_16.CornerRadius = UDim.new(0, 4)
-UICorner_16.Parent = Quality
+UICorner_16.CornerRadius = UDim.new(0, 3)
+UICorner_16.Parent = Template
 
 UICorner_17.CornerRadius = UDim.new(0, 3)
-UICorner_17.Parent = Template
-
-UICorner_18.CornerRadius = UDim.new(0, 3)
-UICorner_18.Parent = Main
+UICorner_17.Parent = Main
 
 Glow.Name = "Glow"
 Glow.Parent = Main
@@ -339,7 +328,7 @@ Glow.SliceCenter = Rect.new(24, 24, 276, 276)
 
 -- Scripts:
 
-local function GHZIIPR_fake_script() -- ScrollingFrame.LocalScript 
+local function ILADUB_fake_script() -- ScrollingFrame.LocalScript 
 	local script = Instance.new('LocalScript', ScrollingFrame)
 
 	local player = game.Players.LocalPlayer
@@ -359,19 +348,56 @@ local function GHZIIPR_fake_script() -- ScrollingFrame.LocalScript
 	partFolder.Parent = base
 	partFolder.Name = "My Items"
 	
-	
 	base.ItemMachine.Molder.Main.Touched:Connect(function(Part)
 		task.wait(0.2)
 		local part = Part.Parent
 		if part.Parent == game:GetService("Workspace").Items then
-			part.Parent = partFolder
+			
+			local names = 0
+			for i,v in pairs(part.Main.Gui:GetChildren()) do
+				v.Name = tostring(names)
+				names = names + 1
+			end
+	
+			local values = 9
+			for i,v in pairs(part.Main.Gui[4]:GetChildren()) do
+				v.Name = tostring(values)
+				values = values + 1
+			end
+	
 			local temp = template:Clone()
+			part.Parent = partFolder
 			temp.Parent = script.Parent
-			for _,Sword in pairs(part.Config:GetChildren()) do
+			for _,Sword in pairs(part:GetDescendants()) do
 				for i,v in pairs(temp.Temp:GetChildren()) do
 					if Sword.Name == v.Name then
 						Sword.Changed:Connect(function()
-							v.Text = tostring(Sword.Value)
+							if Sword.Name == "SellingTime" and Sword.Value < 1 then temp:Destroy()
+							
+							    elseif Sword.Name == "Level" then
+									v.Text = tostring(Sword.Value)
+									v.TextColor3 = Color3.fromRGB(125, 255, 69)
+									
+								elseif Sword.Name == "SellingTime" then
+									v.Text = tostring(Sword.Value)
+									v.TextColor3 = Color3.fromRGB(255, 11, 88)
+							    
+							    elseif Sword.Name == "ITEMID" then
+									v.Text = tostring(Sword.Value)
+									v.TextColor3 = Color3.fromRGB(0, 59, 255)
+									
+								elseif Sword.Name == "CurrentOwner" then
+									v.Text = tostring(Sword.Value)
+									v.TextColor3 = Color3.fromRGB(0, 255, 29)
+								
+								elseif Sword:IsA("TextLabel") then
+									v.Text = Sword.Text
+									if v.Name ~= "5" then
+									v.TextColor3 = Sword.TextColor3
+									elseif v.Name == "5" then
+									       v.TextColor3 = Color3.fromRGB(255, 226, 0)
+							    end
+							end
 						end)
 					end
 				end
@@ -379,4 +405,4 @@ local function GHZIIPR_fake_script() -- ScrollingFrame.LocalScript
 		end
 	end)
 end
-coroutine.wrap(GHZIIPR_fake_script)()
+coroutine.wrap(ILADUB_fake_script)()
