@@ -45,6 +45,9 @@ local UICorner_15 = Instance.new("UICorner")
 local UICorner_16 = Instance.new("UICorner")
 local UICorner_17 = Instance.new("UICorner")
 local Glow = Instance.new("ImageLabel")
+local open = Instance.new("ImageButton")
+local UICorner_18 = Instance.new("UICorner")
+local Open = Instance.new("ImageButton")
 
 --Properties:
 
@@ -62,7 +65,8 @@ Top.Name = "Top"
 Top.Parent = Main
 Top.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Top.BackgroundTransparency = 1.000
-Top.Size = UDim2.new(1, 0, 0.0962566808, 0)
+Top.BorderSizePixel = 0
+Top.Size = UDim2.new(1, 0, 0.0962566957, 0)
 
 TextBox.Parent = Top
 TextBox.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
@@ -114,7 +118,7 @@ ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ScrollingFrame.BackgroundTransparency = 1.000
 ScrollingFrame.BorderSizePixel = 0
 ScrollingFrame.Position = UDim2.new(0.00611995114, 0, 0.114081994, 0)
-ScrollingFrame.Size = UDim2.new(0.987105846, 0, 0.875222802, 0)
+ScrollingFrame.Size = UDim2.new(0.987105846, 0, 0.875222862, 0)
 ScrollingFrame.ScrollBarThickness = 6
 
 UIGridLayout.Parent = ScrollingFrame
@@ -128,12 +132,13 @@ Template.Parent = ScrollingFrame
 Template.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
 Template.BorderSizePixel = 0
 Template.Position = UDim2.new(0.00586848101, 0, 0, 0)
-Template.Size = UDim2.new(0.973383307, 0, 0.158859476, 0)
+Template.Size = UDim2.new(0.973383307, 0, 0.137982652, 0)
 
 Temp.Name = "Temp"
 Temp.Parent = Template
 Temp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Temp.BackgroundTransparency = 1.000
+Temp.BorderSizePixel = 0
 Temp.Position = UDim2.new(0.00627352577, 0, 0.0749999955, 0)
 Temp.Size = UDim2.new(0.987452984, 0, 0.837499976, 0)
 
@@ -331,6 +336,7 @@ UICorner_17.Parent = Main
 Glow.Name = "Glow"
 Glow.Parent = Main
 Glow.BackgroundTransparency = 1.000
+Glow.BorderSizePixel = 0
 Glow.Position = UDim2.new(-0.0539650507, 0, -0.0530436859, 0)
 Glow.Size = UDim2.new(1.10878861, 0, 1.10817635, 0)
 Glow.ZIndex = 0
@@ -338,20 +344,58 @@ Glow.Image = "rbxassetid://5028857084"
 Glow.ImageColor3 = Color3.fromRGB(0, 0, 0)
 Glow.SliceCenter = Rect.new(24, 24, 276, 276)
 
+open.Name = "open"
+open.Parent = Main
+open.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+open.BackgroundTransparency = 1.000
+open.Size = UDim2.new(1, 0, 1.00000024, 0)
+open.Visible = false
+
+UICorner_18.CornerRadius = UDim.new(0, 6)
+UICorner_18.Parent = open
+
+Open.Name = "Open"
+Open.Parent = open
+Open.Active = false
+Open.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+Open.BackgroundTransparency = 1.000
+Open.BorderSizePixel = 0
+Open.Position = UDim2.new(0.470012248, 0, 0.0201607086, 0)
+Open.Selectable = false
+Open.Size = UDim2.new(0.0571083017, 0, 0.965726852, 0)
+Open.Image = "rbxassetid://9098000768"
+
 -- Scripts:
 
-local function RMZPXB_fake_script() -- ImageButton_2.LocalScript 
+local function KLTCUPP_fake_script() -- ImageButton_2.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton_2)
 
 	local Button = script.Parent
-	local GUI = script.Parent.Parent.Parent.Parent
+	local GUI = script.Parent.Parent.Parent
+	
+	local otherButton = GUI.open
+	
+	local function work(complete)
+		if complete then
+		otherButton.Visible = true
+		end
+	end
 	
 	Button.MouseButton1Click:Connect(function()
-		GUI.Enabled = false
+		GUI.ScrollingFrame.Visible = false
+		GUI.Top.Visible = false
+		GUI:TweenSize(
+			UDim2.new(0.514, 0,0.049, 0),
+			Enum.EasingDirection.Out,
+			Enum.EasingStyle.Quart,
+			1,
+			true,
+			work
+		)
 	end)
 end
-coroutine.wrap(RMZPXB_fake_script)()
-local function ZKXTW_fake_script() -- ScrollingFrame.LocalScript 
+coroutine.wrap(KLTCUPP_fake_script)()
+local function EYQXW_fake_script() -- ScrollingFrame.LocalScript 
 	local script = Instance.new('LocalScript', ScrollingFrame)
 
 	local player = game.Players.LocalPlayer
@@ -436,8 +480,8 @@ local function ZKXTW_fake_script() -- ScrollingFrame.LocalScript
 		end
 	end)
 end
-coroutine.wrap(ZKXTW_fake_script)()
-local function NMOWVE_fake_script() -- Main.SmoothDrag 
+coroutine.wrap(EYQXW_fake_script)()
+local function NDJAT_fake_script() -- Main.SmoothDrag 
 	local script = Instance.new('LocalScript', Main)
 
 	local Drag = script.Parent.Parent.Main
@@ -480,4 +524,31 @@ local function NMOWVE_fake_script() -- Main.SmoothDrag
 		end)
 	
 end
-coroutine.wrap(NMOWVE_fake_script)()
+coroutine.wrap(NDJAT_fake_script)()
+local function FWJFVMJ_fake_script() -- open.LocalScript 
+	local script = Instance.new('LocalScript', open)
+
+	local Button = script.Parent
+	local GuiFrame = script.Parent.Parent
+	
+	local function work(complete)
+		if complete then
+			task.wait(0.1)
+			GuiFrame.ScrollingFrame.Visible = true
+			GuiFrame.Top.Visible = true
+		end
+	end
+	
+	Button.MouseButton1Click:Connect(function()
+		Button.Visible = false
+		local tween = GuiFrame:TweenSize(
+			UDim2.new(0.514, 0,0.663, 0),
+			Enum.EasingDirection.In,
+			Enum.EasingStyle.Quad,
+			1,
+			true,
+			work
+		)
+	end)
+end
+coroutine.wrap(FWJFVMJ_fake_script)()
